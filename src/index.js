@@ -1,17 +1,21 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom";
+import "./index.css";
+import { API_KEY, SESSION_ID, TOKEN } from "./config";
+import App from "./App";
+import "@opentok/client";
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+function renderApp(credentials) {
+  ReactDOM.render(
+    <App credentials={credentials} />,
+    document.getElementById("root")
+  );
+}
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+if (API_KEY && TOKEN && SESSION_ID) {
+  renderApp({
+    apiKey: API_KEY,
+    sessionId: SESSION_ID,
+    token: TOKEN,
+  });
+}
