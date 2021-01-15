@@ -106,18 +106,6 @@ export default class App extends React.Component {
     this.setState((state) => ({
       publishScreen: !state.publishScreen,
     }));
-    /* this.setState((state) => {
-      if (state.publishScreen) {
-        // Need to unpublish
-        if (state.publishingScreen) {
-        }
-      } else {
-        // Need to Publish
-        if (!state.publishingScreen) {
-          return {publishingScreen: true, publishScreen: true}
-        }
-      }
-    }); */
   };
 
   render() {

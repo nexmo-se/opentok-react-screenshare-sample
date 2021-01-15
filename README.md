@@ -18,5 +18,15 @@ Example:
 
 ```javascript
 
+{show && (
+            <OTPublisher
+              properties={{ videoSource: "screen", width: 200, height: 200 }}
+              onPublish={this.onPublishScreen}
+              onError={this.onPublishScreenError}
+              eventHandlers={this.publisherScreenEventHandlers}
+            />
+          )}
 
 ```
+
+Remember to add the `mediaStopped` event on the publisher events to handle the mediaTrack stopped event (https://tokbox.com/developer/sdks/js/reference/MediaStoppedEvent.html)
